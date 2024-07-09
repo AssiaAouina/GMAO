@@ -1,0 +1,91 @@
+{% extends 'layout.html'%}
+
+{% block body  %}
+  
+<style>
+     p.italic {
+        font-style: italic;
+     }
+    .card {
+    min-height: 300px;
+    }
+    label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid rgb(30, 32, 128);
+    box-shadow: 1px 1px 1px rgb(12, 152, 156);
+}
+input
+{
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+</style>
+<div class="col-md-offset-3 col-md-11" style="margin-top:40px">
+
+<div id = "card bg-light text-dark">
+    <div class="card">
+  
+ <div>
+    <h4 class="card-header" class="center">ADD NEW PDR</h4>
+    <form action="{{url_for('add_PDR')}}" method="POST" >
+    <div class="form-group">
+    <b><label for=" id" > &emsp; id: </label>
+    <input type="text" name="id" id="id" ></b> <br> <br>
+
+
+    <b> <label for=" Nom">  &emsp; Nom: </label>
+    <input type="text" name="Nom" id="Nom"></b></div>
+   <div> <br> <br>
+
+    <b><label for=" Réf">&emsp; Réf: &emsp;  &emsp; </label>
+    <input type="Réf" name="Réf" id="Réf"></b><br><br>
+
+    <b><label for=" Qt">&emsp; Quantité: &emsp;  &emsp; </label>
+    <input type="Qt" name="Qt" id="Qt"></b></div> <br> <br>
+     <div>
+    <b><label for=" Marque">  &emsp; Marque : &emsp;  &emsp;</label>
+    <input type="text" name="Marque" id="Marque"></b><br></div>
+    <br><br>
+    <b><label for=" Etat">  &emsp; Etat:  &emsp;  &emsp;</label>
+        <input type="" name="Etat" id="Etat"></b>
+        </div><br> <br>
+
+        <div>
+<!--   
+      < <b><label for="imagefile"  filename="/static/css/img/" > &emsp; Choose a  picture: &emsp;  &emsp;
+        <input type="file" name="image" id="image"> 
+      </div> </label>  --> 
+   
+  </div><br> <br>
+ 
+  <input type="submit" class="btn btn-primary" value="submit">
+
+
+</div>
+</div>
+    </form>
+{%  endblock  %}

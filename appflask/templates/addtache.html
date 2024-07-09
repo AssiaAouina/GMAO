@@ -1,0 +1,104 @@
+{% extends 'layout.html'%}
+
+{% block body  %}
+  
+<style>
+     p.italic {
+        font-style: italic;
+     }
+    .card {
+    min-height: 300px;
+    }
+    label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid rgb(30, 32, 128);
+    box-shadow: 1px 1px 1px rgb(12, 152, 156);
+}
+input
+{
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+</style>
+<div class="col-md-offset-3 col-md-11" style="margin-top:40px">
+    <form action="{{url_for('addtache')}}" method="POST" enctype="multipart/form-data">
+
+<div id = "card bg-light text-dark">
+    <div class="card">
+  
+ <div>
+    <h4 class="card-header" class="center">ADD NEW Tache</h4>
+    <form action="{{url_for('addtache')}}" method="POST" >
+    <div class="form-group">
+            <b>&emsp;<label for=" ID" > &emsp; ID: </label>
+    <input type="ID" name="ID" id="ID" ></b>
+    <b>&emsp;<label for=" title" > &emsp; title: </label>
+    <input type="text" name="title" id="title" ></b><br><br>
+     &emsp;   <label for="Details">  &emsp; Details:  &emsp;  &emsp;</label>
+
+   &emsp; <textarea id="Details" name="Details"
+          rows="3" cols="33">
+      Details...
+     </textarea>
+
+
+    <b>&emsp;<label for=" Equipement">&emsp; Equipement: &emsp;  &emsp; </label>
+    <input type="text" name="Equipement" id="Equipement"></b>
+
+    <b>&emsp;<label for=" N_PDR">&emsp; N_PDR: &emsp;  &emsp; </label>
+    <input type="" name="N_PDR" id="N_PDR"></b></div> <br> <br>
+     <div>
+     <b>&emsp;<label for=" Date">&emsp; Date: &emsp;  &emsp; </label>
+    <input type="date" name="Date" id="Date" aria-describedby="date-format" min="2021-03-01" max="2031-01-01" ></b>
+
+       &emsp; <b><label for=" Fréquance">  &emsp; Fréquance : &emsp;  &emsp;</label>
+    <input type="Fréquance" name="Fréquance" id="Fréquance"></b>
+
+    
+    <b><label for=" Etat">  &emsp; Etat : &emsp;  &emsp;</label>
+    <input type="Etat" name="Etat" id="Etat"></b><br></div>
+    <br><br>
+        &emsp;<b><label for=" Rp_d_intervention">  &emsp; Rp_d_intervention:  &emsp;  &emsp;</label>
+    <input type="" name="Rp_d_intervention" id="Rp_d_intervention"></b>
+
+
+     <b>&emsp;<label for=" ET_pdr">  &emsp; ET_pdr : &emsp;  &emsp;</label>
+    <input type="ET_pdr" name="ET_pdr" id="ET_pdr"></b><br>
+    <br><br>
+
+</div>
+   
+
+ 
+  <input type="submit" class="btn btn-primary" value="submit">
+    </div>
+<div>
+
+</div>
+</div>
+    </form>
+{%  endblock  %}

@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block body %}
+ 
+  <div class="row">
+   
+        <form action="/update/{{intervention.id}}"  method="POST" >
+          
+            <label for="id">id</label>
+            <input type="text" name ="id" id="id"  class="form-control" required="required"><BR>
+
+            <label for="N_fiche_intervention">N_fiche_intervention</label>
+            <input type="text" name="N_fiche_intervention" id="N_fiche_intervention" value="{{intervention.N_fiche_intervention}}"  class="form-control">
+         
+          
+            <label for="cd_eq">cd_eq</label>
+            <input type="text" name="cd_eq" id="cd_eq"  value="{{intervention.cd_eq}}" class="form-control">
+          
+          <label for="n_intervenant">n_intervenant</label>
+            <input type="text" name="n_intervenant"  id="n_intervenant"   value="{{intervention.n_intervenant}}"class="form-control" required="required">
+          
+          <label for="id_Intervenant">id_Intervenant</label>
+            <input type="text" name="id_Intervenant"  id="id_Intervenant" value="{{intervention.id_Intervenant}}" class="form-control">
+         
+          <label for="Date_d_anomalie">Date_d_anomalie</label>
+            <input type="date" name="Date_d_anomalie"  id="Date_d_anomalie"  value="{{intervention.Date_d_anomalie}}" class="form-control">
+          
+          <label for="date_intervention">date_intervention</label>
+            <input type="date" name="date_intervention"  id ="date_intervention" value="{{intervention.date_intervention}}"class="form-control">
+          
+          <label for="organ">organ</label>
+            <input type="text" name="organ"  id ="organ"  value="{{intervention.organ}}"class="form-control">
+          
+         <label for="Nature_de_panne">Nature_de_panne</label>
+            <input type="text" name="Nature_de_panne"  id="Nature_de_panne"  value="{{intervention.Nature_de_panne}}"class="form-control">
+          
+        <label for="Cause_de_panne">new_Cause_de_panne</label>
+            <input type="text" name="Cause_de_panne"  id ="Cause_de_panne " value="{{intervention.Cause_de_panne}}"class="form-control">
+          
+       <label for="Date_de_mise_en_service">Date_de_mise_en_service</label>
+            <input type="date" name="Date_de_mise_en_service"   id="new_Date_de_mise_en_service" value="{{intervention.Date_de_mise_en_service}}" class="form-control">
+          
+        <label for="Temps_d_arrêt">Temps_d_arrêt</label>
+            <input type="time" name="Temps_d_arrêt"  id="Temps_d_arrêt" value="{{intervention.Temps_d_arrêt}}" class="form-control">
+          
+          
+         
+            <button type="submit" class="btn btn-primary btn-block">
+              update
+            </button>
+
+        </form>
+      
+      </div>
+    </div>
+  </div>
+  {% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'layout.html'%}
+
+{% block body  %}
+
+
+{% block content  %}
+<!DOCTYPE html>
+ <html>
+ <head>
+ <title>View intervention</title>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	.inp_file{
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+	body{
+  font-family: 'Poiret One', cursive;
+  background: #3494E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+h4{
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+.form-wrapper{
+  background: #fff;
+  border-radius: 5px;
+  padding: 44px;
+}
+.form-control, .custom-select{
+  border-radius: 0px;
+    color: #495057;
+    background-color: #f1f1f1;
+    border-color: none;
+   
+
+}
+
+.form-control:focus {
+    color: #495057;
+    background-color: #ffffff;
+    border:1px solid #b5b6b3;
+    outline: 0;
+    box-shadow: none;
+
+}
+
+.btn{
+  background: #3494E6;
+  border: #3494E6;
+  padding: 0.6rem 3rem;
+  font-weight: bold;
+}
+.btn:hover, .btn:focus, .btn:active, .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  background: #3494E6;
+  border: #3494E6;
+  outline: 0;
+}
+	</style>
+ </head>
+ <body>
+  {% for post in posts %}
+  <div class='post'>
+ <section class="contact-from pt-3">
+<div class="container">                
+                <div class="row mt-5">
+                    <div class="col-md-11 mx-auto">
+                      <div class="form-wrapper">
+                        <div class="row">
+                          
+						  </div><div class="col-md-8">
+                            <h4 class="text-center">View intervention</h4>
+                          </div>
+						  <div class="row">
+             
+						
+						 
+						  </div>
+					
+						    <div class="col-md-6" > <label style="color: rgb(63, 68, 71);">id  :</label>
+                            {{ post['id'] }}</div> <br>
+					  	  <div class="col-md-6"> <label style="color: rgb(63, 68, 71);">N_fiche_intervention :</label>
+                            {{ post['N_fiche_intervention'] }}</div>
+						       <div class="col-md-6"> <label style="color: rgb(63, 68, 71);">cd_eq :</label>
+                            {{ post['cd_eq'] }}</div>
+						       <div class="col-md-6"> <label style="color: rgb(63, 68, 71);">n_intervenant:</label>
+                            {{ post['n_intervenant'] }}</div>
+						       <div class="col-md-6"> <label style="color: rgb(63, 68, 71);">id_Intervenant :</label>
+                            {{ post['id_Intervenant'] }}</div>
+						  
+                   <div class="col-md-6"> <label style="color: rgb(63, 68, 71);">Date_d_anomalie :</label>
+                     {{ post['Date_d_anomalie'] }}</div>
+                 
+                 <div class="col-md-6"> <label style="color: rgb(63, 68, 71);">date_intervention :</label>
+                    {{ post['date_intervention'] }}</div>
+                   <div class="col-md-6"><label style="color: rgb(63, 68, 71);">organ :</label> {{ post['organ'] }}</div>
+                   <div class="col-md-6"><label style="color: rgb(63, 68, 71);">Nature_de_panne :</label> {{ post['Nature_de_panne'] }}</div>
+                   <div class="col-md-6"><label style="color: rgb(63, 68, 71);">Cause_de_panne :</label>{{ post['Cause_de_panne'] }}</div>
+                   <div class="col-md-8"><label style="color: rgb(63, 68, 71);">Date_de_mise_en_service :</label>{{ post['Date_de_mise_en_service'] }}</div>
+                   <div class="col-md-6"><label style="color: rgb(63, 68, 71);">Temps_d_arrêt :</label>{{ post['Temps_d_arrêt'] }}</div>
+						 	 	 	 
+                   {% endfor %}
+                </div>
+            </div>
+  
+  </div>
+  </section>
+  {% endblock %}
+  {% endblock %}
+ </body>
+ </html>  

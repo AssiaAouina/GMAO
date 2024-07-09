@@ -1,0 +1,133 @@
+:root{
+  --primary:#003cbe;
+  --bg-primary:#ebf3fe;
+  --bg-secondary:#fafbff;
+  --txt-secondary:#787c85;
+  --Enmarche:#04a534;
+  --Enpanne:#a50904;
+  --shadow:2px 1px 14px 2px hsl(0deg 0% 0% / 5%);
+}
+
+* {
+  margin: 10;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', serif;
+
+}
+/* .inline-flex {
+  display: inline-flex;
+}
+
+.flex {
+  display: flex;
+} */
+
+.border{
+  border-radius: 40px;
+}
+.container{
+  /* flex-direction: column; */
+  display: flex;
+  gap: 20px 50px;
+  align-items: center;
+  justify-content: center;
+  height: max-content;
+  width: px;
+
+  flex-wrap: wrap;
+  background-color: var(--bg-primary);
+  background-size: 400px 100px;
+  gap: 40px;
+}
+
+.equipement{
+  width:300px;
+  height: 470px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+
+.header{
+  padding: 20px 20px 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.code{
+  font-size: 20px;
+}
+.status{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--Enpanne); 
+  --Enpanne:#a50904;
+
+  height:20px;
+  /* margin: 0 3px 1px 0; */
+  vertical-align: right;
+  display: inline-block;
+  width: 20px;
+}
+
+
+.statue{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--Enmarche);
+--Enmarche:#04a534;
+
+  height:20px;
+  /* margin: 0 3px 1px 0; */
+  vertical-align: right;
+  display: inline-block;
+  width: 20px;
+}
+.nom{
+  padding:0px 20px 10px 20px;
+  font-size: 15px;
+  color: var(--txt-secondary);
+}
+.cover{
+  width: 100%;
+  height: 200px;
+}
+.details{
+  padding: 10px 20px;
+}
+
+.buttons{
+  padding: 20px ;
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  gap: 20px;
+}
+
+.buttons button{
+  width: 50px;
+  height: 40px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.view{
+  background: var(--primary);
+}
+
+.edit{
+  background: var(--Enmarche);
+}
+
+.delete{
+  background: rgb(231, 35, 35);
+}

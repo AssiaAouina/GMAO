@@ -1,0 +1,30 @@
+
+{% extends "layout.html" %}
+{% block title %}
+    Add Event
+{% endblock title %}
+
+{% block body %}
+    <div class="container">
+        <form action="/add" method="POST">
+            <div class="mb-3">
+                <div class="mb-3">
+              <label for="idcal" class="form-label">idcal</label>
+              <input type="idcal" class="form-control" name="idcal" id="idcal" placeholder="Leave empty for no url to be there">
+            </div>
+              <label for="start_event" class="form-label">start_event</label>
+              <input type="text" class="form-control" name="start_event" id="start_event" placeholder="Enter the event title">
+            </div>
+            <div class="mb-3">
+              <label for="end_event" class="form-label">end_event</label>
+              <input type="text" class="form-control" name="end_event" id="end_event" placeholder="Format is yyyy-mm-ddThh:mm Ignore Thh:mm if you need it for all day">
+            </div>
+            <div class="mb-3">
+              <label for="title" class="form-label">title</label>
+              <input type="text" class="form-control" name="title" id="title" placeholder="leave empty for event to be all day">
+            </div>
+
+            <button type="submit" class="btn btn-outline-dark">Submit</button>
+          </form>
+    </div>
+{% endblock body %}

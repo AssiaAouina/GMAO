@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<style>
+
+
+
+     p.italic {
+        font-style: italic;
+     }
+    .card {
+    min-height: 300px;
+    }
+    label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid rgb(47, 128, 30);
+    box-shadow: 1px 1px 1px #999;
+}
+input
+{
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+ </style>
+
+<div id= "card bg-light text-dark">
+    <div class="card">
+   <div class="row">
+
+
+   
+        <form action="/reno/{{PDR.id}}"  method="POST">
+          <label for="Nom">Nom</label>
+
+            <input type="Nom" name="Nom" id="Nom"  value="{{PDR.Nom}}" class="form-control">
+          
+          <label for="Réf">Réf</label>
+            <input type="Réf" name="Réf"  id="Réf"   value="{{PDR.Réf}}"class="form-control">
+          <label for="Qt">Qt</label>
+            <input type="Qt" name="Qt"  id="Qt"   value="{{PDR.Qt}}"class="form-control">
+          
+          <label for="Marque">Marque</label>
+            <input type="Marque" name="Marque"  id="Marque"   value="{{PDR.Marque}}"class="form-control">
+          <label for="Etat">Etat</label>
+            <input type="Etat" name="Etat"  id="Etat"   value="{{PDR.Etat }}"class="form-control">
+
+           <button type="submit" class="btn btn-primary btn-block">
+              update
+            </button>
+          </div>
+        </form>
+      
+      </div>
+    </div>
+  </div>
+ 
+
+ {% endblock %} 

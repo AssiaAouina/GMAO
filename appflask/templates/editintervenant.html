@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+ {% block content  %}
+
+        <form action="/renovate/{{intervenant.id}}"  method="POST">
+          
+          
+            <label for="name">name</label>
+            <input type="text" name="name" id="name" value="{{intervenant.name}}"  class="form-control">
+         
+          
+            <label for="contact">contact</label>
+            <input type="number" name="contact" id="contact"  value="{{intervenant.contact}}" class="form-control">
+          
+          <label for="email">email</label>
+            <input type="email" name="email"  id="email"   value="{{intervenant.email}}"class="form-control">
+
+         
+           <button type="submit" class="btn btn-primary btn-block">
+              update
+            </button>
+
+
+        </form>
+
+
+ {% endblock %}
+ {% endblock %}

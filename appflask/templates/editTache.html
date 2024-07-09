@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<style>
+
+        
+    
+     p.italic {
+        font-style: italic;
+     }
+    .card {
+    min-height: 300px;
+    }
+    label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid rgb(47, 128, 30);
+    box-shadow: 1px 1px 1px #999;
+}
+input
+{
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+ </style>
+
+<div id= "card bg-light text-dark">
+    <div class="card">
+    <h4 class="card-header" class="center">update Tache </h4><br> <br>
+
+
+          <form action="/updatetaches/{{lesTaches.ID}}" method="POST" enctype="multipart/form-data" >
+            <label for=" ID" > &emsp; ID: &emsp;  &emsp; </label>
+            <input type="" name="ID" value="{{lesTaches.ID}}"  class="form-control" >
+          <div class="form-group">
+            <label for=" title" > &emsp; title: &emsp;  &emsp; </label>
+            <input type="" name="title" value="{{lesTaches.title}}"  class="form-control" >
+          </div>
+          <div class="form-group">
+            <label for=" Details" > &emsp; Details: &emsp;  &emsp; </label>
+            <input type="text" name="Details" value="{{lesTaches.Details}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for=" Equipement" > &emsp; Equipement: &emsp;  &emsp; </label>
+            <input type="text" name="Equipement" value="{{lesTaches.Equipement}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for=" N_PDR" > &emsp; N_PDR: &emsp;  &emsp; </label>
+            <input type="text" name="N_PDR" value="{{lesTaches.N_PDR}}" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for=" Date" > &emsp; Date: &emsp;  &emsp; </label>
+            <input type="datetime" name="Date" value="{{lesTaches.Date}}" class="form-control">
+          </div>
+          <label for=" Fréquance" > &emsp; Fréquance: &emsp;  &emsp; </label>
+          <div class="form-group">
+            <input type="text" name="Fréquance" value="{{lesTaches.Fréquance}}" class="form-control">
+          </div>
+          <label for=" Etat" > &emsp; Etat: &emsp;  &emsp; </label>
+          <div class="form-group">
+            <input type="text" name="Etat" value="{{lesTaches.Etat}}" class="form-control">
+          </div>
+
+      <label for=" Rp_d_intervention" > &emsp; Rp_d_intervention: &emsp;  &emsp; </label>
+          <div class="form-group">
+            <input type="text" name="Rp_d_intervention" value="{{lesTaches.Rp_d_intervention}}" class="form-control">
+          </div>
+               <label for=" ET_pdr" > &emsp; ET_pdr: &emsp;  &emsp; </label>
+          <div class="form-group">
+            <input type="text" name="ET_pdr" value="{{lesTaches.ET_pdr}}" class="form-control">
+          </div>
+            
+           
+        
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Update
+            </button>
+          </div>
+        </form>
+     
+      </div>
+   
+    </div>
+  </div> 
+</div>
+  {% endblock %}

@@ -1,0 +1,232 @@
+{% extends 'layout.html'%}
+
+  {% block body  %}
+
+ 
+
+{% block content  %}
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion de la maintenance</title>
+    <link rel="stylesheet" href="static/css/intervention.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<style>
+  *,*::after,*::before{
+    box-sizing: inhiret;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    box-sizing: border-box;
+
+  }
+
+
+  body {
+    background-color: #c8d6e5;
+  }
+
+  .Card {
+    background-color: #d1d8e0;
+    height: 70vh;
+    width: 22rem;
+    margin: 6rem auto;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 9px 5px 5px rgba(0,0,0,.3);
+    background-image: url(https://source.unsplash.com/random);
+    background-position: center;
+    background-size: cover;
+    z-index: 1;
+  }
+
+
+  .ribbon {
+       width: 150px;
+      height: 150px;
+      overflow: hidden;
+      position: absolute;
+        top: -10px;
+      right: -10px;
+  }
+  .ribbon__content {
+      left: -25px;
+      top: 30px;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      position: absolute;
+      display: block;
+      width: 225px;
+      padding: 10px 0;
+      background-color: #f5cd79;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.192);
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.2);
+      text-transform: uppercase;
+      text-align: center;
+      border: 2px dotted #fff;
+      outline : 5px solid  #f5cd79;
+
+
+  }
+  .ribbon::before {
+      top: 0;
+      left: 0;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      position: absolute;
+      z-index: -1;
+      content: '';
+      display: block;
+      border: 5px solid #f19066;
+      box-sizing: content-box;
+
+  }
+  .ribbon::after {
+      bottom: 0;
+      right: 0;
+      border-top-color: transparent;
+      border-right-color: transparent;
+      position: absolute;
+      z-index: -1;
+      content: '';
+      display: block;
+      border: 5px solid #f19066;
+
+  }
+
+
+</style>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+{% for category,message in messages %}
+<div class="alert alert-{{category}}">{{message}}</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<!--<button style="width: 30%" ><a href="/addPDR">Add PDR</a>-->
+
+
+</a></button>
+
+  <a href="/addtache" class="btn d-inline-flex btn-sm btn-primary mx-1" style="width: 15%" >
+    <span class=" ">
+      <i class="ti-plus" style="text-align:center">Ajouter une tache  </i>
+   </span>
+
+  </a>
+
+    <main class="container">
+
+        <!-- taskhead ends -->
+
+
+
+
+ {% for post in posts %}
+  <div class="equipement">
+
+    <div class="header">
+      <div class='post'>
+
+      <P class="code" style=" display: inline-flex; ">{{post['ID']}}</P>
+
+     {%if  post['ET_pdr']=="desponible"  %}
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <span class="statue"></span>
+       {% else %}
+      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="status"></span>
+       {% endif %}
+   </div>
+   </div>
+            <h2 class="nom"> {{ post['title'] }}</h2>
+
+            <p class="details">{{ post['Date'] }}</p>
+            <div class="buttons">
+              <button class="view" style="color: white;"><a href="#myModal"><a href="/viewtache/{{post.ID}}"data-toggle="modal" data-target="#myModal{{post.ID}}"  style="color: white;" >
+                  <i class="icon ion-md-eye"></i></a></a></button>
+                <button class="edit"  style="color: white;">  <a href="/editTache/{{post.ID}}"  style="color: white;"><i class="icon ion-md-create"></i></a></a></button>
+                <button class="delete"><a href="/DEL/{{post.ID}}" style="color: white;"><i class="icon ion-md-trash"></i></a></button>
+            </div>
+        </div>
+
+        {% endfor %}
+               {% for post in posts %}
+        <div id="myModal{{post.ID}}" class="modal fade" role="dialog">
+          <div class="modal-dialog" >
+
+            <!-- Modal content-->
+            <div class="modal-content">
+
+              <div class="modal-header"style="background-color:lightblue;">
+                <h4 class="modal-title"  >&emsp;&emsp;&emsp;&emsp;&emsp;view Tache</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+ </div>
+
+              <div class="modal-body">
+                   {%if  post['ET_pdr']=="desponible"  %}
+       &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;    <span class="statue"></span>
+       {% else %}
+   &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;  <span class="status"></span>
+       {% endif %}
+                  </div>
+                <div class="col-md-8" > <label style="color: rgb(63, 68, 71);">ID :</label>
+                  {{ post['ID'] }}</div>
+                <div class="col-md-9"> <label style="color: rgb(63, 68, 71);">title :</label>
+                  {{ post['title'] }}</div>
+                <div class="col-md-9"> <label style="color: rgb(63, 68, 71);">Details :</label>
+                  {{ post['Details'] }}</div>
+                <div class="col-md-12"> <label style="color: rgb(63, 68, 71);">Equipement:</label>
+                  {{ post['Equipement'] }}</div>
+                <div class="col-md-9"> <label style="color: rgb(63, 68, 71);">id_Intervenant :</label>
+                  {{ post['id_Intervenant'] }}</div>
+
+                <div class="col-md-11"> <label style="color: rgb(63, 68, 71);">N_PDR :</label>
+                {{ post['N_PDR'] }}</div>
+
+              <div class="col-md-11"> <label style="color: rgb(63, 68, 71);">Date :</label>
+              {{ post['Date'] }}</div>
+
+            <div class="col-md-9"><label style="color: rgb(63, 68, 71);">Fréquance :</label> {{ post['Fréquance'] }}</div>
+            <div class="col-md-9"><label style="color: rgb(63, 68, 71);">Etat :</label>{{ post['Etat'] }}</div>
+            <div class="col-md-11"><label style="color: rgb(63, 68, 71);">Rp_d_intervention :</label>{{ post['Rp_d_intervention'] }}</div>
+            <div class="col-md-9"><label style="color: rgb(63, 68, 71);">ET_pdr :</label>{{ post['ET_pdr'] }}
+
+
+
+
+             </div>
+              <div class="modal-footer"style="background-color:lightblue;">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+
+ </main>
+{% endblock %}
+{% endblock %}
+
+
+</body>
+</html>

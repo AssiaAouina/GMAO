@@ -1,0 +1,30 @@
+{% extends 'layout.html'%}
+
+  {% block body  %}
+
+ 
+
+{% block content  %}
+  {% for post in posts %}
+
+          <label for="Qt">Qt</label>
+
+            <input type="Qt" name="Qt" id="Qt"  value="{{post['Qt']}}" class="form-control">
+
+          <label for="qt2">Qt</label>
+            <input type="qt2" name="qt2"  id="qt2"   value="{{post['qt2']}}"class="form-control">
+
+<div class="form-group">
+
+
+      <button class="btn btn-warning" type="submit">Update</button>
+
+
+      </div>
+
+          </div>
+
+
+{%endfor%}
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends 'layout.html'%}
+
+{% block body  %}
+
+
+        
+    <style>
+     p.italic {
+        font-style: italic;
+     }
+    .card {
+    min-height: 300px;
+    }
+    label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid rgb(47, 128, 30);
+    box-shadow: 1px 1px 1px #999;
+}
+input
+{
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+    </style>
+<div>
+<h4 class="card-header" class="center">ADD NEW INTERVENTION</h4><br> <br>
+<form action="{{url_for('add_intervention')}}" method="POST">
+<div class="form-group">
+<div id = "card bg-light text-dark">
+    <div class="card">
+      
+     <div>
+        &emsp;<b><label for=" id" > &emsp; id: &emsp;  &emsp; </label>
+    <input type="" name="id" id="id"></b><br> <br>
+      
+    &emsp;<b> <label for=" N_fiche_intervention">  &emsp; N_fiche_intervention:  &emsp;  &emsp;</label>
+    <input type="text" name="N_fiche_intervention" id="N_fiche_intervention"></b></div>
+   <div> <br> 
+
+    &emsp;<b><label for=" cd_eq">&emsp; cd_eq: &emsp;  &emsp; </label>
+    <input type="text" name="cd_eq" id="cd_eq"></b> <br> <br>
+
+    &emsp;<b><label for=" n_intervenant">&emsp; n_intervenant: &emsp;  &emsp; </label>
+    <input type="" name="n_intervenant" id="n_intervenant"></b></div> 
+ <div> <br>
+    &emsp;<b><label for=" id_Intervenant">&emsp; id_Intervenant: &emsp;  &emsp; </label>
+        <input type="" name="id_Intervenant" id="id_Intervenant"></b> <br> 
+   
+    
+   
+     <br>
+     &emsp; <b> <label for=" Date_d_anomalie">&emsp; Date_d_anomalie: &emsp;  &emsp; </label>
+        <input id="Date_d_anomalie" type="datetime-local" name="Date_d_anomalie" min="2020-01-01T08:30" max="2031-06-30T16:30"></b>  </div>
+     <div>  <br>
+        &emsp;<b><label for=" date_intervention">&emsp; date_intervention: &emsp;  &emsp; </label>
+        <input id="date_intervention" type="datetime-local" name="date_intervention" min="2020-01-01T08:30" max="2031-06-30T16:30"></b> <br>
+   
+     <br>
+     &emsp;<b><label for=" organ">  &emsp; organ:  &emsp;  &emsp;</label>
+    <input type="" name="organ" id="organ"></b> </div>
+   
+   <div>
+    <br>
+    &emsp;<b><label for=" Nature_de_panne">  &emsp; Nature_de_panne:  &emsp;  &emsp;</label>
+    <input type="" name="Nature_de_panne" id="Nature_de_panne"></b> <br>  <br>
+   
+    &emsp;<b><label for="story">  &emsp; Cause_de_panne:  &emsp;  &emsp;</label></b>
+
+    &emsp; <textarea id="Cause_de_panne" name="Cause_de_panne"
+          rows="2" cols="33">
+          Cause_de_panne...
+     </textarea>
+    </div>
+    <br> <br>
+   
+   <div>
+    &emsp; <b><label for="Date_de_mise_en_service">  &emsp;Date_de_mise_en_service : &emsp;  &emsp;</label>
+    <input id="Date_de_mise_en_service" type="datetime-local" name="Date_de_mise_en_service" min="2020-01-01T08:30" max="2031-06-30T16:30"></b> 
+   </div>
+     <br> <br>
+    <div>
+        &emsp;<b><label for="Temps_d_arrêt">Temps_d_arrêt:</label>
+
+        <input type="time" id="Temps_d_arrêt" name="Temps_d_arrêt"
+               min="09:00" max="18:00" required></b>
+    
+   </div>
+    <input type="submit" class="btn btn-primary" value="submit">
+
+</form>
+</div>
+</div>
+{%  endblock  %}

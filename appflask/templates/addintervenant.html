@@ -1,0 +1,79 @@
+{% extends 'layout.html'%}
+
+{% block body  %}
+
+<div id = "card bg-light text-dark">
+    <div class="card">
+        
+    <style>
+     p.italic {
+        font-style: italic;
+     }
+    .card {
+    min-height: 300px;
+    }
+    label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid rgb(47, 128, 30);
+    box-shadow: 1px 1px 1px #999;
+}
+input
+{
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+    </style>
+<div>
+<h4 class="card-header" class="center">ADD NEW INTERVENANT</h4><br> <br>
+<form action="{{url_for('add_intervenant')}}" method="POST">
+    <div class="form-group">
+        &emsp; <b><label for=" id" > &emsp; id: &emsp;  &emsp; </label>
+    <input type="" name="id" id="id"></b>
+    <br> <br>
+    &emsp; <b> <label for=" name">  &emsp; name: </label>
+    <input type="text" name="name" id="name"></b></div><br> 
+   <div>
+    
+    &emsp;<b><label for=" contact">&emsp; contact: &emsp;  &emsp; </label>
+    <input type="text" name="contact" id="contact"></b>
+     <br> <br>
+     &emsp;<b><label for=" email">&emsp; email: &emsp;  &emsp; </label>
+    <input type="" name="email" id="email"></b></div> 
+ <div> <br> <br>
+    
+    </div>
+   
+    
+  
+    
+   </div>
+    <input type="submit" class="btn btn-primary" value="submit">
+ 
+</form>
+</div>
+</div>
+{%  endblock  %}

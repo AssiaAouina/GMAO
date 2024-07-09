@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+
+</head>
+<body>
+<!-- Dashboard -->
+<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary">
+    <!-- Vertical Navbar -->
+    <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg" id="navbarVertical">
+        <div class="container-fluid">
+            <!-- Toggler -->
+            <button class="navbar-toggler ms-n2" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarCollapse" aria-controls="sidebarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Brand-->
+            <a class="navbar-brand py-lg-2 mb-lg-5 px-lg-6 me-0" href="#">
+                <img src="static/css/img/image.png"   width="60px" height="60px"   font-family='Crete Round' alt="..."/>
+                <span style=" font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;font-size: 30px ;color:#25b3b8;" >SNCH</span>
+            </a>
+             <br> <br>
+            <!-- User menu (mobile) -->
+            <div class="navbar-user d-lg-none">
+                <!-- Dropdown -->
+                <div class="dropdown">
+
+                    </a>
+                    <!-- Menu -->
+
+                </div>
+            </div>
+            <!-- Collapse -->
+            <div class="collapse navbar-collapse" id="sidebarCollapse">
+                <!-- Navigation -->
+                <ul class="navbar-nav">
+
+                    </li><br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/equipement">
+                            <i class="ti-hummer"></i> Equipement
+                        </a>
+                    </li><br>
+                    <li class="nav-item">
+                        <li class="active"><a class="nav-link" href="/intervention">
+                            <i class="ti-agenda"></i> intervention
+
+                        </a>
+                    </li>
+                        </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/intervenant">
+                            <i class="ti-clipboard"></i> intervenant
+                            </a>
+                    </li><br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/PDR">
+                            <i class="ti-clipboard"></i>pièces de rechange
+                        </a>
+                    </li><br>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/calendrier">
+                            <i class="ti-clipboard"></i>calendrier
+                        </a>
+                    </li><br>
+                             <li class="nav-item">
+                    <a class="nav-link" href="/LesTaches">
+                        <i class="ti-clipboard"></i>Les Taches
+                    </a>
+                </li><br>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">
+                        <i class="ti-settings"></i> logout
+                    </a>
+                </li>
+
+                </ul>
+
+
+                <div >
+            {% if session.logged_in %}
+
+              <a href="/logout"></a>
+            {% else %}
+
+              <a href="/index">Login</a>
+            {% endif %}
+        </div>
+     <div >
+         <div >
+         <div >
+ </nav>
+
+
+</body>
+</html>

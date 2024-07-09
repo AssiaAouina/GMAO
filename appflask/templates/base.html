@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}- </title>
+    
+   
+</head>
+<body>
+    <!-- <nav>
+        <a href="{{ url_for('dashboard') }}"></a>
+        <a href="#"></a>
+    </nav> -->
+ 
+  
+    <nav>
+        <a href="{{ url_for('intervenant') }}"></a>
+        <a href="#"></a>
+    </nav>
+    <nav>
+        <a href="{{ url_for('intervention') }}"></a>
+        <a href="#"></a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

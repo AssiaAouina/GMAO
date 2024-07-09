@@ -1,0 +1,143 @@
+
+{% extends "layout.html" %}
+{% block body  %}
+ {% block content  %}
+<!DOCTYPE html>
+<html>
+ <head>
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+   var calendar = $('#calendar').fullCalendar({
+    editable:true,
+    header:{
+     left:'prev,next today',
+     center:'title',
+     right:'month,agendaWeek,agendaDay'
+    },
+    events: [{% for row in calendar %}{ idcal : '{{row.idcal}}', title : '{{row.title}}', start : '{{row.start_event}}', end : '{{row.end_event}}', }, {% endfor %}],
+    selectable:true,
+    selectHelper:true,
+  select: function(start, end, allDay)
+    {
+     var title = prompt("Enter Event Title");
+
+
+     if(title)
+     {
+      var start = $.fullCalendar.formatDate(start, "Y-MM-DD ");
+      var end = $.fullCalendar.formatDate(end, "Y-MM-DD ");
+      $.ajax({
+       url:"/insert",
+       type:"POST",
+       data:{title:title,start:start, end:end},
+       success:function(data)
+       {
+         //alert(data)
+        alert("Added Successfully");
+        window.location.replace("/calendrier");
+       }
+      })
+     }
+    },
+    editable:true,
+     eventResize:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD ");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD ");
+     var title = event.title;
+     var id = event.idcal;
+     $.ajax({
+      url:"/updatecal",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:idcal},
+      success:function(){
+       calendar.fullCalendar('refetchEvents');
+       alert('Event Update');
+      }
+     })
+    },
+
+    eventDrop:function(event)
+    {
+     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD ");
+     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD ");
+     var title = event.title;
+     var id = event.idcal;
+     $.ajax({
+      url:"/updatecal",
+      type:"POST",
+      data:{title:title, start:start, end:end, id:idcal},
+      success:function()
+      {
+       calendar.fullCalendar('refetchEvents');
+       alert("Event Updated");
+      }
+     });
+    },
+ eventClick:function(event)
+    {
+     if(confirm("Are you sure you want to remove it?"))
+     {
+      var id = event.idcal;
+      $.ajax({
+       url:"/ajax_delete",
+       type:"POST",
+       data:{idcal:id},
+       success:function()
+       {
+        calendar.fullCalendar('refetchEvents');
+        alert("Event Removed");
+       }
+      })
+     }
+    },
+    });
+  });
+
+ </script>
+   <script>
+$(document).ready(function(){
+$(".alert").hide(5 184 000)
+});
+
+</script>
+
+ </head>
+ <body>
+
+{% with messages = get_flashed_messages(with_categories=true)%}
+{% if messages %}
+{% for category,message in messages %}
+<div class="alert alert-{{category}}">{{message}}</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
+
+
+  <div class="container">
+   <div id="calendar"></div>
+  </div>
+
+
+
+</div>
+  </div>
+
+</div>
+  </div>
+ </body>
+</html>
+{% endblock %}
+{% endblock %}

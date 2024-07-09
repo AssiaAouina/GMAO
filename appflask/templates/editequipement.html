@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+<style>
+
+        
+    
+     p.italic {
+        font-style: italic;
+     }
+    .card {
+    min-height: 300px;
+    }
+    label,
+textarea {
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+label {
+    font-size: .8rem;
+    letter-spacing: 1px;
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid rgb(47, 128, 30);
+    box-shadow: 1px 1px 1px #999;
+}
+input
+{
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+ </style>
+
+<div id= "card bg-light text-dark">
+    <div class="card">
+    <h4 class="card-header" class="center"> update EQUIPEMENT</h4><br> <br>
+
+ 
+          <form action="/up/{{Equipement.code_Equipement}}" method="POST" enctype="multipart/form-data" > 
+            <label for=" code_Equipement" > &emsp; code_Equipement: &emsp;  &emsp; </label>
+            <input type="" name="code_Equipement" value="{{Equipement.code_Equipement}}"  class="form-control" >
+          <div class="form-group">
+            <label for=" DESIGNATION" > &emsp; DESIGNATION: &emsp;  &emsp; </label>
+            <input type="" name="DESIGNATION" value="{{Equipement.DESIGNATION}}"  class="form-control" >
+          </div>
+          <div class="form-group">
+            <label for=" Marque" > &emsp; Marque: &emsp;  &emsp; </label>
+            <input type="text" name="Marque" value="{{Equipement.Marque}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for=" N_de_série" > &emsp; N_de_série: &emsp;  &emsp; </label>
+            <input type="text" name="N_de_série" value="{{Equipement.N_de_série}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for=" Date_d_acquisition" > &emsp; Date_d_acquisition: &emsp;  &emsp; </label>
+            <input type="datetime" name="Date_d_acquisition" value="{{Equipement.Date_d_acquisition}}" class="form-control">
+          </div>
+          
+          <div class="form-group">
+            <label for=" état" > &emsp; état: &emsp;  &emsp; </label>
+            <input type="text" name="état" value="{{Equipement.état}}" class="form-control">
+          </div>
+          <label for=" Remarque" > &emsp; Remarque: &emsp;  &emsp; </label>
+          <div class="form-group">
+            <input type="text" name="Remarque" value="{{Equipement.Remarque}}" class="form-control">
+          </div>
+          <label for=" type" > &emsp; type: &emsp;  &emsp; </label>
+          <div class="form-group">
+            <input type="text" name="type" value="{{Equipement.type}}" class="form-control">
+          </div>
+          <!-- <div class="form-group">
+            <input type="image" name="image" value="{{Equipement.image}}" class="form-control"><br>  </div> -->
+           
+            <div class="form-group">
+              <label>Browse Image</label>
+              <input type="file" class="form-control" value="{{Equipement.image}}"  name="image" required>
+          </div>
+            
+           
+        
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">
+              Update
+            </button>
+          </div>
+        </form>
+     
+      </div>
+   
+    </div>
+  </div> 
+</div>
+  {% endblock %}
